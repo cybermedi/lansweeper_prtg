@@ -38,7 +38,7 @@ function getListOfAllReportsFromAllSites([String]$identity_code){
     $sites = $sites.data.authorizedSites.sites
     for (($i = 0); $i -lt $sites.length; $i++)
     {
-        Write-Host "*** Available reports in site: " $sites[$i].name "`n"
+        Write-Host "*** Available reports in site: " $sites[$i].name "`nSite ID: "  $sites[$i].id "`n"
         $reports= getListOfReports $identity_code $sites[$i].id
         $reports = $reports.data.site.authorizedReports
         for (($j = 0); $j -lt $reports.length; $j++)
